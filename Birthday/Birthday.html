@@ -1,97 +1,75 @@
-
-<html lang="vi"
-    __fvdsurfcanyoninserted="1"
-    class="
-        clickberry-extension
-        clickberry-extension-standalone
-        clickberry-extension
-        clickberry-extension-standalone
-        clickberry-extension
-        clickberry-extension-standalone
-    "
->
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="shortcut icon" type="birthdayCake.jpg" href="./birthdayCake.jpg"/>
-        <title>Happy Birthday</title>
-        <link rel="stylesheet" href="./style.css">
-        <script>
-            window.open = function () {};
-            window.print = function () {};
-            // Support hover state for mobile.
-            if (false) {
-                window.ontouchstart = function () {};
-            }
-        </script>
-        <script
-            type="text/javascript"
-            src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"
-        ></script>
-        <meta content="clickberry-extension-here" />
-    </head>
-
-    <body>
-        <link
-            href="https://fonts.googleapis.com/css?family=Wendy+One"
-            rel="stylesheet"
-            type="text/css"
-        />
-        <div class="pyro">
-            <div class="before">
-                
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="birthdayCake.jpg" href="./birthdayCake.jpg"/>
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script>
+        window.open = function () {};
+        window.print = function () {};
+        if (false) {
+            window.ontouchstart = function () {};
+        }
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+        <div class="container">
+            <div class="balloon">
+                <div><span>H</span></div>
+                <div><span>A</span></div>
+                <div><span>P</span></div>
+                <div><span>P</span></div>
+                <div><span>Y</span></div>
+                <div><span>B</span></div>
+                <div><span>I</span></div>
+                <div><span>R</span></div>
+                <div><span>T</span></div>
+                <div><span>H</span></div>
+                <div><span>D</span></div>
+                <div><span>A</span></div>
+                <div><span>Y</span></div>
             </div>
-            <div class="after">
-
-            </div>
-            <div class="container">
-                <!-- 2. Dòng chữ Happy Birthday
-                Nếu bạn muốn thêm chữ vào thì phải thay đổi css tương ứng cho nó -->
-                <div class="balloon">
-                    <div><span>H</span></div>
-                    <div><span>A</span></div>
-                    <div><span>P</span></div>
-                    <div><span>P</span></div>
-                    <div><span>Y</span></div>
-                    <div><span>B</span></div>
-                    <div><span>I</span></div>
-                    <div><span>R</span></div>
-                    <div><span>T</span></div>
-                    <div><span>H</span></div>
-                    <div><span>D</span></div>
-                    <div><span>A</span></div>
-                    <div><span>Y</span></div>
+            <div class="avatar__container">
+            <div class="avatars">
+                <div class="avatar__frame">
+                    <img src="./khangs.jpg" alt="Nhựt Kháng" class="avatar__img" onclick="showMessage('Nhựt Kháng')" />
+                    <h1 onclick="showMessage('Nhựt Kháng')" class="avatar__title">Nhựt Kháng</h1>
                 </div>
-                <div class="avatar">
-                    <!-- 3. Avatar của người bạn muốn gởi lời chúc -->
-                    <img src="./khangs.jpg" alt="" class="avatar__img" onclick="showMessage()" />
-                    <!-- 4. Tên của người đó -->
-                    <h1 onclick="showMessage()" class="avatar__title">Nhựt Kháng</h1>
+                <div class="avatar__frame">
+                    <img src="./ngoctho.jpg" alt="Ngọc Thọ" class="avatar__img" onclick="showMessage('Ngọc Thọ')" />
+                    <h1 onclick="showMessage('Ngọc Thọ')" class="avatar__title">Ngọc Thọ</h1>
                 </div>
-                
-                <!-- 5. Phần nhạc -->
-                 <audio id="player" autoplay loop>
-                    <source src="./music.mp3" type="audio/mp3">
-                </audio> 
             </div>
         </div>
-        <script>
-            if (document.location.search.match(/type=embed/gi)) {
-                window.parent.postMessage("resize", "*");
-            }
-            function showMessage() {
-                // 6. Lời nhắn hiện ra khi bấm vào tên hoặc avatar
-                swal({
-                    title: "Lời nhắn", // Tiêu đề của popup
-                    text: "Chúc bạn luôn luôn vui vẻ, tươi trẻ, mạnh khỏe, tính tình mát mẻ, cuộc đời suôn sẻ. Hãy luôn luôn tươi cười, yêu đời, ngời ngời sức sống.", // Nội dung lời nhắn
-                    button: {
-                        text: "❤️️",
-                    },
-                });
-            }
-            document.addEventListener('click', function() {
+            <audio id="player" autoplay loop>
+                <source src="./music.mp3" type="audio/mp3">
+            </audio>
+        </div>
+    </div>
+      <button class="custom-button" onclick="showMessage('Bạn ơi')">Ấn vào đây</button>
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+        function showMessage(name) {
+            swal({
+                title: "Lời nhắn",
+                text: `Chúc ${name} luôn luôn vui vẻ, tươi trẻ, mạnh khỏe, tính tình mát mẻ, cuộc đời suôn sẻ. Hãy luôn luôn tươi cười, yêu đời, ngời ngời sức sống.`,
+                button: {
+                    text: "❤️️",
+                },
+            });
+        }
+        document.addEventListener('click', function() {
             document.getElementById('player').play();
         });
-        </script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    </body>
+    </script>
+</body>
 </html>
